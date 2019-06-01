@@ -1,23 +1,18 @@
 # Vagrant
-
 [Project GitHub](https://github.com/hashicorp/vagrant)
-
 ## Installation on RHEL/CentOS/Fedora
-
 Install your virtualization platform:
-
 - Install Libvirt
-    - RHEL/CentOS: `$ yum install virt-manager libvirt libvirt-python virt-install`
-    - Fedora: `$ dnf install virt-manager libvirt libvirt-python`
+    - RHEL7/CentOS7: `$ yum install virt-manager libvirt libvirt-python virt-install`
+    - Fedora30: `$ dnf install virt-manager libvirt libvirt-python`
 - Install VirtualBox
-    - RHEL/CentOS:
-
-        - `$ wget -P /etc/yum.repos.d/ http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo`
-
-        - `$ yum update && yum --enablerepo=epel install dkms kernel-devel && groupinstall "Development Tools"`
-        - $ diff <(uname -r) <(rpm -qa kernel |sort -V |tail -n 1) &&
+    - RHEL7/CentOS7:
+        ```sh
+        $ wget -P /etc/yum.repos.d/ http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+        $ yum update && yum --enablerepo=epel install dkms kernel-devel && groupinstall "Development Tools"
+        $ diff <(uname -r) <(rpm -qa kernel |sort -V |tail -n 1) && 
     - Fedora:
-
+        ```
 `$ wget -o https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.rpm
 $ yum install vagrant_2.2.4_86_64.rpm`
 
